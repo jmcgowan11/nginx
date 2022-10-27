@@ -9,7 +9,7 @@ terraform {
 }
 
   resource "linode_lke_cluster" "my-cluster" {
-    name        = var.cluster
+    label        = var.cluster
     region      = var.region
     k8s_version = var.kubernetes_ver
     tags        = [var.project]
