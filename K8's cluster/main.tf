@@ -10,8 +10,8 @@ terraform {
 
   resource "linode_lke_cluster" "my-cluster" {
     name        = var.cluster
-    k8s_version = "1.21"
     region      = var.region
+    k8s_version = var.kubernetes_ver
     tags        = [var.project]
 
     pool {
