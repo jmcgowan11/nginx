@@ -9,13 +9,13 @@ terraform {
 }
 
   resource "linode_lke_cluster" "my-cluster" {
-    label        = var.cluster
+    label       = var.cluster
     region      = var.region
-    k8s_version = "1.21"
+    k8s_version = var.kubernetes_ver
     tags        = [var.project]
 
     pool {
-        type  = "g6-standard-2"
+        type  = "g6-nanode-1"
         count = 3
 
         autoscaler {
